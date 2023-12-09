@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <form [formGroup]="logInForm" (ngSubmit)="login()">
+    <h3>Доброго дня! залогуйтесь, будь-ласка:</h3>
+    <mat-form-field>
+      <mat-label>Логін</mat-label>
+      <input
+        matInput
+        id="email"
+        type="email"
+        formControlName="email"
+        matInput
+        formControlName="email"
+        placeholder="example@example.com"
+      />
+      <mat-error *ngIf="logInForm.get('email')?.errors?.['required']">
+        Введіть, будь-ласка, пошту
+      </mat-error>
+      <mat-error *ngIf="logInForm.get('email')?.errors?.['email']">
+        Enter valid email, please
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Пароль</mat-label>
+      <input
+        matInput
+        id="password"
+        type="password"
+        formControlName="password"
+        matInput
+        formControlName="password"
+        autocomplete="on"
+      />
+      <mat-error *ngIf="logInForm.get('password')?.errors?.['required']">
+        Введіть, будь-ласка, пароль
+      </mat-error>
+      <mat-error *ngIf="logInForm.get('password')?.errors?.['minlength']">
+        The password must be at least
+        {{ logInForm.get("password")?.errors?.['minlength'].requiredLength }}
+        characters.Now it
+        {{ logInForm.get("password")?.errors?.['minlength'].actualLength }}
+      </mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+    >
+      Login
+    </button>
+  </form>
+</div>
