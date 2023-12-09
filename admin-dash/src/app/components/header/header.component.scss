@@ -37,6 +37,23 @@ margin-top: 12px;
 .admin-info {
   margin-right: 23px;
   padding-top: 2px;
+
+  .admin-name {
+  color: var(--black, #1F2427);
+  font-family: e-Ukraine;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  }
+
+  .admin-role {
+  color: var(--black, #1F2427);
+  font-family: e-Ukraine;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
+  }
 }
 
 .admin-avatar {
